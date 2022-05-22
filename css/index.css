@@ -35,6 +35,11 @@ header{
 #main-highlight-image{
     grid-area: image;
 }
+#main-highlight-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .image{
     max-width: 100%;
     height: auto;
@@ -42,7 +47,9 @@ header{
 #highlights{
     grid-area: highlights;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    color: white;
 }
 .secondary-highlight{
     display: grid;
@@ -71,25 +78,30 @@ footer{
         grid-template-columns: 1fr;
         grid-template-rows: 80px 180px 100vh 60vh 80px;
     }  
-    #highlights{
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2,1fr);
-    }
     #title{
         font-size: 5.3vw;
     }
 }
 @media (min-width: 900px){
     .main-container{
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1440px;
         grid-template-columns: 1fr;
         grid-template-rows: 80px 180px 80vh 60vh 80px;
     }   
+    #highlights{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+        grid-gap:40px;
+        padding-left: 40px;
+    }
     #content{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(2,1fr);
     }
     #title{
-        font-size: 5.3vw;
+        font-size: 3vw;
     }
 }
 @media (min-width: 1300px){
@@ -102,6 +114,6 @@ footer{
         grid-template-rows: 1fr;
     }
     #title{
-        font-size: 5.3vw;
+        font-size: 3vw;
     }
 }
